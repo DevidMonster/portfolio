@@ -1,6 +1,6 @@
 # portfolio
 
 ## First run
-    * npm i
+    npm i
 ## Second run
-    * npm run dev
+    npm run dev
