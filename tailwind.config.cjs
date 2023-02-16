@@ -18,9 +18,18 @@ module.exports = {
         },
         animation: {
           'type-reverse': 'type-reverse 5.5s ease-out 0s infinite alternate-reverse both',
-          'img-line': 'move-rl 3s ease-in 0s both'
+          'img-line': 'move-rl 3s ease-in 0s both',
+          'toggle-text': 'toggle 0.5s ease-in-out infinite both'
         },
         keyframes: {
+          'toggle': {
+            '0%, 100%': {
+              opacity: 0
+            },
+            '50%': {
+              opacity: 1
+            }
+          },
           'move-rl': {
             '0%, 20%': {
               transform: `translate(200%, -200%)`

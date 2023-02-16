@@ -13,7 +13,7 @@ function Contact() {
             
         `)}
         <div>
-            <p class="tw-bg-white tw-h-24 tw-text-4xl tw-text-regal-purple tw-text-center">Currently active looking for Frontend Developer Internship</p>
+            <p class="tw-bg-white tw-h-24 tw-text-1xl md:tw-text-3xl tw-text-regal-purple tw-text-center">Currently active looking for Frontend Developer Internship</p>
         </div>
     `;
 }

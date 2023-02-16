@@ -7,7 +7,7 @@ import Contact from "@/pages/Contact";
 
 function DefaultLayout() {
     return ` 
-        <div class="tw-bg-gradient-to-br tw-from-regal-purple tw-to-regal-blue">
+        <div id="home" class="tw-bg-gradient-to-br tw-from-regal-purple tw-to-regal-blue">
             ${Header()}
             ${Banner()}
             ${About()}
