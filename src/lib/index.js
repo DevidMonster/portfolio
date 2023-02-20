@@ -1,6 +1,5 @@
 import Navigo from "navigo";
 const router = new Navigo("/", { linksSelector: "a"})
-const routerAdmin = new Navigo("/", { linksSelector: "a", hash: true });
 
 let effects = [];
 let currentEffectOrder = 0;
@@ -111,4 +110,4 @@ router.on("/*", () => {}, {
     },
 })
 
-export { render, useState, useEffect, router, routerAdmin };
+export { render, useState, useEffect, router };
