@@ -1,4 +1,4 @@
-import Tags from "@/components/tags"
+import Tags from "@/components/Tags"
 import { router, useEffect, useState } from "@/lib"
 import { request } from "@/util/httpRequest"
 
