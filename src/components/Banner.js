@@ -38,7 +38,7 @@ function Banner() {
                 </button>
             </div>
             <div class="before:tw-absolute before:tw-top-0 before:tw-left-0 before:tw-rotate-180 before:tw-animate-item-line  before:tw-transition-all before:tw-block before:tw-w-500 before:tw-h-500 before:tw-rounded-full before:tw-bg-gradient-to-br before:tw-from-pink-500 before:tw-to-orange-300 tw-flex-1 tw-absolute tw-right-0 tw-z-0 tw-bottom-0 lg:tw-relative tw-h-screen">
-                <img class="tw-animate-img-line tw-transition-all tw-z-10 tw-w-full lg:tw-w-3/5 lg:tw-absolute lg:tw-top-6 lg:tw-right-1/3 tw-h-full tw-object-cover tw-block lg:tw-my-0 lg:tw-mx-auto" src="${images.avatar}" alt="Avatar"/>
+                <img class="tw-animate-img-line tw-transition-all tw-z-10 lg:tw-absolute lg:tw-top-6 lg:tw-right-1/3 tw-h-full tw-object-cover tw-block lg:tw-my-0 lg:tw-mx-auto" src="${images.avatar}" alt="Avatar"/>
             </div>
         </div>
     `;
