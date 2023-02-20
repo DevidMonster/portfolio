@@ -116,7 +116,7 @@ console.log(listTag)
                 <label>Description</label>
                 <textarea required class="inp_des tw-w-full tw-bg-transparent tw-border-1 tw-border-white tw-p-3" rows="8" placeholder="Enter description"></textarea>
                 <label>Link Web</label>
-                <input required class="inp_link" type="text" placeholder="Type Link here..."/>
+                <input required class="inp_link" type="url" placeholder="Type Link here..."/>
                 <button class="btn_add">Add Project</button>
             </form>
         </div>

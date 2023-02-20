@@ -5,7 +5,6 @@ import ProjectData from "@/pages/admin/ProjectData";
 import AddProject from "@/pages/admin/AddProject";
 import EditProject from "@/pages/admin/EditProject";
 
-window.scroll({ behavior: "smooth" })
 const app = document.querySelector("#app")
 
 router.on('/', () => render(() => DefaultLayout(), app));

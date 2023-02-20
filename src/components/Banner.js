@@ -1,28 +1,30 @@
 import images from "@/asset/images";
 import { useEffect } from "@/lib";
-import Typed from "typed.js";
 
 function Banner() {
-
     useEffect(() => {
-        const typed = new Typed('#text', {
-            strings: ['', 'Nguyễn Quang Đăng'],
-            loop: true,
-            typeSpeed: 100,
-            backSpeed: 80,
-            backDelay: 2000,
+        const bannerText = document.querySelector('#banner_text')
+        const text = bannerText.querySelectorAll('.typed-cursor')
+        if(text.length === 0) {
+            const typed = new Typed('#text', {
+                strings: ['', 'Nguyễn Quang Đăng'],
+                loop: true,
+                typeSpeed: 100,
+                backSpeed: 20,
+                backDelay: 1000,
+            })
+        }
 
-        })
     })
     
     return `
         <div class="tw-flex tw-relative tw-justify-between tw-overflow-hidden tw-items-center tw-min-h-screen tw-text-white">
             <div class="tw-flex-1 tw-p-9 tw-z-7">
-                <h1 class="tw-text-left tw-text-4xl md:tw-text-7xl tw-font-bold ">
+                <h1 id="banner_text" class="tw-text-left tw-text-4xl md:tw-text-7xl tw-font-bold ">
                     Hi, I'm 
                     </br>
                     <span id="text" class="md:tw-text-6xl tw-text-4xl tw-h-16 md:tw-h-24 tw-pt-2">
-
+                        
                     </span>
                 </h1>
                 <h2 class="md:tw-text-3xl tw-text-2xl tw-my-4">

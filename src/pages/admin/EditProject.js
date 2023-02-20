@@ -136,7 +136,7 @@ function EditProject({ id }) {
                 <img class="tw-w-52 md:tw-w-1/4 tw-my-4" src="${Object.keys(item).length > 0 && item.images[0]}" alt="${item.name}"/>
                 <textarea required class="inp_des tw-w-full tw-bg-transparent tw-border-1 tw-border-white tw-p-3" rows="8" placeholder="Enter description">${item.description}</textarea>
                 <label>Link Web</label>
-                <input required class="inp_link" value="${item.link}" type="text" placeholder="Type Link here..."/>
+                <input required class="inp_link" value="${item.link}" type="url" placeholder="Type Link here..."/>
                 <button class="btn_add">Edit Project</button>
             </form>
         </div>

@@ -32,11 +32,20 @@ module.exports = {
           'regal-yellow-tight': '#9e9f9f',
         },
         animation: {
+          'rotate': 'rotateLoader .5s linear 0s infinite both',
           'img-line': 'move-rl 3s ease-in 0s infinite both',
           'item-line': 'move-rl 3s ease-in 0s reverse infinite both',
           'toggle-text': 'toggle 0.5s ease-in-out infinite both'
         },
         keyframes: {
+          'rotateLoader': {
+            'from': {
+              transform: `rotate(0deg)`
+            },
+            'to': {
+              transform: `rotate(360deg)`
+            },
+          }, 
           'toggle': {
             '0%, 100%': {
               opacity: 0

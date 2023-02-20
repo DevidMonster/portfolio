@@ -6,6 +6,8 @@ import project2 from './project2.jpg';
 import facebook from './facebook.png';
 import gmail from './gmail.png';
 import github from './github.png';
+import loader from './loader.png';
+import loaderWhite from './loaderWhite.png';
 
 const images = {
     avatar,
@@ -15,7 +17,9 @@ const images = {
     project2,
     facebook,
     gmail,
-    github
+    github,
+    loader,
+    loaderWhite,
 }
 
 export default images
