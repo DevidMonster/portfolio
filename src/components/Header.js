@@ -21,7 +21,7 @@ function Header(menu) {
     })
     return `
         <div class="tw-flex tw-justify-between tw-p-8 tw-items-center tw-sticky tw-backdrop-blur-lg tw-z-10 tw-top-0 tw-px-8 tw-shadow-md tw-h-16 tw-border-b tw-border-gray-500 tw-text-white tw-font-bold">
-            <a href="#home"><img class=""  src="${images.logo}" alt="Nguyễn Quang Đăng"/></a>
+            <a href="/"><img class=""  src="${images.logo}" alt="Nguyễn Quang Đăng"/></a>
             <ul id="menu" class="tw-hidden tw-gap-4 md:tw-flex">
                 ${menu.map(item => `
                     <li>
