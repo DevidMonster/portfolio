@@ -1,15 +1,28 @@
 import images from "@/asset/images";
+import { useEffect } from "@/lib";
+import Typed from "typed.js";
 
 function Banner() {
+
+    useEffect(() => {
+        const typed = new Typed('#text', {
+            strings: ['', 'Nguyễn Quang Đăng'],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 2000,
+
+        })
+    })
+    
     return `
-        <div class="tw-flex tw-relative tw-justify-between tw-items-center tw-min-h-screen tw-text-white">
+        <div class="tw-flex tw-relative tw-justify-between tw-overflow-hidden tw-items-center tw-min-h-screen tw-text-white">
             <div class="tw-flex-1 tw-p-9 tw-z-7">
-                <h1 class="tw-text-4xl md:tw-text-7xl tw-font-bold ">
+                <h1 class="tw-text-left tw-text-4xl md:tw-text-7xl tw-font-bold ">
                     Hi, I'm 
                     </br>
-                    <span class="md:tw-text-6xl tw-text-4xl tw-leading-tight tw-inline-flex tw-h-16 md:tw-h-24 tw-pt-2 tw-overflow-x-hidden tw-animate-type-reverse tw-whitespace-nowrap tw-text-brand-accent tw-will-change-transform">
-                        Nguyễn Quang Đăng
-                    </span><span class="tw-box-border tw-inline-block tw-w-1 tw-h-9 tw-bg-white md:tw-h-16 tw-animate-cursor tw-animate-toggle-text tw-will-change-transform">
+                    <span id="text" class="md:tw-text-6xl tw-text-4xl tw-h-16 md:tw-h-24 tw-pt-2">
+
                     </span>
                 </h1>
                 <h2 class="md:tw-text-3xl tw-text-2xl tw-my-4">
@@ -24,8 +37,8 @@ function Banner() {
                     </a>
                 </button>
             </div>
-            <div class="tw-flex-1 tw-absolute tw-right-0 tw-z-0 tw-bottom-0 lg:tw-relative tw-h-screen">
-                <img class="tw-animate-img-line tw-transition-all tw-w-full lg:tw-w-1/2  tw-h-full tw-object-cover tw-block lg:tw-my-0 lg:tw-mx-auto" src="${images.avatar}" alt="Avatar"/>
+            <div class="before:tw-absolute before:tw-top-0 before:tw-left-0 before:tw-rotate-180 before:tw-animate-item-line  before:tw-transition-all before:tw-block before:tw-w-500 before:tw-h-500 before:tw-rounded-full before:tw-bg-gradient-to-br before:tw-from-pink-500 before:tw-to-orange-300 tw-flex-1 tw-absolute tw-right-0 tw-z-0 tw-bottom-0 lg:tw-relative tw-h-screen">
+                <img class="tw-animate-img-line tw-transition-all tw-z-10 tw-w-full lg:tw-w-3/5 lg:tw-absolute lg:tw-top-6 lg:tw-right-1/3 tw-h-full tw-object-cover tw-block lg:tw-my-0 lg:tw-mx-auto" src="${images.avatar}" alt="Avatar"/>
             </div>
         </div>
     `;

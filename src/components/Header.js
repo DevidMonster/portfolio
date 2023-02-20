@@ -1,16 +1,15 @@
 import images from "@/asset/images";
-import { menu } from "@/data";
 import { useEffect } from "@/lib";
 import tippy from "tippy.js";
 import 'tippy.js/dist/tippy.css'
 
-function Header() {
+function Header(menu) {
 
     useEffect(() => {
         tippy('#menu_btn', {
             content: `<ul>         
                 ${menu.map(item => `
-                    <li><a href="${item.link}" class="tw-w-48 tw-text-white tw-block tw-p-3 tw-rounded-xl hover:tw-bg-regal-blue">${item.title}</a></li>
+                    <li><a href="${item.link}" class="tw-w-48 tw-text-white tw-block tw-p-3 tw-rounded-xl hover:tw-bg-regal-blue-tight" data-navigo>${item.title}</a></li>
                 `).join('')}
             </ul>`,
             trigger: 'click',
@@ -26,7 +25,7 @@ function Header() {
             <ul id="menu" class="tw-hidden tw-gap-4 md:tw-flex">
                 ${menu.map(item => `
                     <li>
-                        <a class="tw-text-regal-purple hover:tw-text-regal-blue tw-duration-300" href="${item.link}">${item.title}</a>
+                        <a class="tw-text-regal-purple hover:tw-text-regal-blue-tight tw-text-2xl tw-duration-300" href="${item.link}" data-navigo>${item.title}</a>
                     </li>
                 `).join('')}
             </ul>

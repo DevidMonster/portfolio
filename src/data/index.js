@@ -4,3 +4,8 @@ export const menu = [
     {id: 3,title: 'Projects', link: '#project'},
     {id: 4,title: 'Contact', link: '#contact'}
 ]
+
+export const menuAdmin = [
+    {id: 1, title: 'Project', link: '/project-admin'},
+    {id: 2, title: 'Add Project', link: '/project-add'}
+]

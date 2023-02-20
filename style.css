@@ -3,17 +3,194 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
-.reveal{
-    position: relative;
-    transform: translateY(200px);
-    opacity: 0;
-    transition: 1s all ease;
-  }
+table {
+  border: 1px solid white;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+
+.header_nav {
+  height: 60px;
+  align-items: center;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.header_nav a {
+  border-bottom: 1px solid black;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.project_container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.inp_search {
+  border: 1px solid Grey;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.powiadomienie {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.powiadomienie p {
+  font-size: 1.4rem;
+}
+
+.btn-reload_data {
+  padding: 1 0px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.table_project {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table_project tr {
+  border-bottom: 1px solid white;
+}
+
+.table_project td {
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.table_project td:nth-child(3) {
+  width: 300px;
+}
+
+.table_project td:nth-child(5) {
+  padding-left: 20px;
+}
+
+.table_project td img {
+  height: 100%;
+}
+
+.table_project td button:first-child {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
+
+.table_project td button:first-child+button {
+  padding: 10px;
+  color: blue;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+
+.btn_add {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.box {
+  border: 1px solid rgba(9, 204, 9, 0.829);
+  padding: 20px;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+
+.Tag {
+  list-style: none;
+  background: rgba(9, 204, 9, 0.829);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin: 4px 5px 4px 0px;
+  border-radius: 5px;
+}
+
+.Tag button {
+  border-radius: 50%;
+  margin-left: 4px;
+  width: 20px;
+  height: 20px;
+  font-size: .8rem;
+  font-weight: lighter;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.Text-Tag {
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  font-family: "Roboto";
+  font-weight: 600;
+  flex: 1;
+}
+
+.btn-addTag {
+  padding: 9px 6px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid white;
   
-  .reveal.active{
-    transform: translateY(0);
-    opacity: 1;
-  }
+}
+
+.btn-addTag:hover {
+  background-color: blueviolet;
+}

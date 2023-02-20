@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "name": "XOSS || Fashion",
+      "images": [
+        "https://res.cloudinary.com/dpwto5xyv/image/upload/v1676702605/learnECMAS/e97yt1tnfgh35cpffrzx.jpg"
+      ],
+      "techs": [
+        "PHP",
+        "MySQL",
+        "JavaScript"
+      ],
+      "description": "Website selling clothes, serving customers",
+      "link": "http://xoss.nguyenquangdang.ml/",
+      "id": 1
+    },
+    {
+      "name": "DevidShop || Fashion",
+      "images": [
+        "https://res.cloudinary.com/dpwto5xyv/image/upload/v1676707407/learnECMAS/hy1zp0gseynbqjwzkks6.jpg"
+      ],
+      "techs": [
+        "ReactJs",
+        "NodeJs",
+        "MongoDB",
+        "Express"
+      ],
+      "description": "Website selling clothes, serving customers",
+      "link": "https://quangdang.ml/",
+      "id": 2
+    }
+  ]
+}
