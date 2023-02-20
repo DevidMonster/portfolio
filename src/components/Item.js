@@ -1,7 +1,7 @@
 function Item(image, name, description, frameWork = [], link) {
     return `
-        <div class="tw-bg-white tw-gap-1 md:tw-w-2/6 tw-flex tw-flex-col tw-rounded-xl hover:tw-scale-105 tw-transition-all tw-h-500">
-            <img src="${image}" class="tw-rounded-xl tw-w-full tw-h-56"/>
+        <div class="tw-bg-white tw-gap-1 md:tw-w-2/6 tw-flex tw-flex-col tw-rounded-xl hover:tw-scale-105 tw-transition-all tw-h-4/5">
+            <img src="${image}" class="tw-rounded-xl tw-w-full tw-h-2/5"/>
             <h1 class="tw-px-3 tw-text-xl tw-text-left tw-font-bold tw-text-regal-purple">> ${name}</h1>
             <ul class="tw-px-3 tw-flex tw-gap-2 tw-flex-wrap">
                 ${frameWork.map(item => `

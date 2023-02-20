@@ -7,7 +7,7 @@ function Projects(projects) {
 
     return `
         ${Session('','project', 'Portfolio', `
-          <div class="tw-flex tw-justify-center tw-items-center tw-flex-wrap tw-gap-6 tw-my-7">
+          <div class="tw-flex tw-h-screen tw-justify-center tw-items-center tw-flex-wrap tw-gap-6 tw-my-7">
                 ${projects.map(item => `
                     ${Item(`${item.images[0]}`, item.name, item.description, item.techs, item.link)}
                 `).join('')}
