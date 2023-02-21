@@ -22,19 +22,23 @@ function AddProject() {
         const inpDes = document.querySelector(".inp_des")
         const inpLink = document.querySelector(".inp_link")
         const imageValue = document.querySelector(".inp_add_file")
-        
+        const error = document.querySelector("#error")
+
         form.addEventListener('submit',async (e) => {
             e.preventDefault()
-            console.log(imageValue.files)
-            const urls = await uploadFiles(imageValue.files)
-            postAPI({
-                name: inpValue.value,
-                images: urls,
-                techs: listTag,
-                description: inpDes.value,
-                link: inpLink.value
-            })
-           
+            if(listTag.length > 0) {
+                console.log(imageValue.files)
+                const urls = await uploadFiles(imageValue.files)
+                postAPI({
+                    name: inpValue.value,
+                    images: urls,
+                    techs: listTag,
+                    description: inpDes.value,
+                    link: inpLink.value
+                })
+            } else {
+                error.innerText = '* Please Fill this'
+            }
             
         })
 
@@ -95,7 +99,7 @@ console.log(listTag)
             <h1>Add New Project</h1>
             <form class="form_submit">
                 <div class="tw-py-3">
-                    <h2>Add Tech</h2>
+                    <h2>Add framework/tech</h2>
                     <div class="box">
                         ${listTag.map(item => `
                             <li class="Tag">
@@ -104,6 +108,7 @@ console.log(listTag)
                             </li>
                         `).join('')}
                     </div>
+                    <p id="error" class="tw-text-white"></p>
                     ${Tags(handleClick)}
                 </div>
                 <label>Name Project</label>

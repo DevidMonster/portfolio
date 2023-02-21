@@ -26,7 +26,9 @@ function Projects() {
           <div class="tw-flex tw-h-screen tw-justify-center tw-flex-wrap tw-gap-6 tw-my-7">
                 ${projects.length === 0? (
                     `
-                        ${Loading()}
+                        <div class="tw-my-20">
+                            ${Loading()}
+                        </div>
                     `
                 ) : (projects.map(item => `
                     ${Item(`${item.images[0]}`, item.name, item.description, item.techs, item.link)}

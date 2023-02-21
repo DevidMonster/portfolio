@@ -6,7 +6,7 @@ import { request } from "@/util/httpRequest"
 function EditProject({ id }) {
     const [item, setItem] = useState({})
     const [listTag, setListTag] = useState([...new Set([])])
-
+    console.log(listTag.length);
     const fetchAPI = async () => {
         const itemResult = await request.get(`/projects/${id}`, {
             headers: {
@@ -38,23 +38,28 @@ function EditProject({ id }) {
         const inpDes = document.querySelector(".inp_des")
         const inpLink = document.querySelector(".inp_link")
         const imageValue = document.querySelector(".inp_add_file")
-        
+        const error = document.querySelector("#error")
+
         form.addEventListener('submit',async (e) => {
             e.preventDefault()
-            console.log(imageValue.files)
-            let files = imageValue.files
-            if(imageValue.files.length === 0) {
+            if(listTag.length > 0) {
+
+                console.log(imageValue.files)
+                let files = imageValue.files
+                if(imageValue.files.length === 0) {
                 files = item.images
+                }
+                const urls = await uploadFiles(files)
+                editItem({
+                    name: inpValue.value,
+                    images: urls,
+                    techs: listTag,
+                    description: inpDes.value,
+                    link: inpLink.value
+                })   
+            } else {
+                error.innerText = '* Please Fill this'
             }
-            const urls = await uploadFiles(files)
-            editItem({
-                name: inpValue.value,
-                images: urls,
-                techs: listTag,
-                description: inpDes.value,
-                link: inpLink.value
-            })
-           
             
         })
 
@@ -114,7 +119,7 @@ function EditProject({ id }) {
             <h1>Edit</h1>
             <form class="form_submit">
                 <div class="tw-py-3">
-                    <h2>Edit Tech</h2>
+                    <h2>Edit framework/tech</h2>
                     <div class="box">
                         ${listTag.map(item => `
                             <li class="Tag">
@@ -123,6 +128,7 @@ function EditProject({ id }) {
                             </li>
                         `).join('')}
                     </div>
+                    <p id="error" class="tw-text-white"></p>
                     ${Tags(handleClick)}
                 </div>
                 <label>Name Project</label>

@@ -28,7 +28,7 @@ function Banner() {
                     </span>
                 </h1>
                 <h2 class="md:tw-text-3xl tw-text-2xl tw-my-4">
-                    I have 1,5 years of experience in Web Development
+                    I have 1 year of web development experience
                 </h2>
                 <p>
                     Should Hire me

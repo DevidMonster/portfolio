@@ -79,7 +79,7 @@ function ProjectData() {
                             <td>Name</td>
                             <td>Images</td>
                             <td>Description</td>
-                            <td>Tech</td>
+                            <td>Framework/Tech</td>
                             <td>Link</td>
                             <td>Action</td>
                         </tr>
@@ -87,8 +87,12 @@ function ProjectData() {
                     <tbody>
                         ${data.length === 0 ? (
                             `
-                                <tr>
-                                    <td colspan="7">${Loading()}</td>
+                                <tr >
+                                    <td colspan="7">
+                                        <div class="tw-py-14">
+                                            ${Loading()}
+                                        </div>
+                                    </td>
                                 </tr>
                             `
                         ) : (
