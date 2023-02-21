@@ -23,10 +23,35 @@ function AddProject() {
         const inpLink = document.querySelector(".inp_link")
         const imageValue = document.querySelector(".inp_add_file")
         const error = document.querySelector("#error")
+        const errorName = document.querySelector("#errorName")
+        const errorPic = document.querySelector("#errorPic")
+        const errorDesc = document.querySelector("#errorDesc")
+        const errorLink = document.querySelector("#errorLink")
 
         form.addEventListener('submit',async (e) => {
             e.preventDefault()
-            if(listTag.length > 0) {
+            let i = true
+            if(inpValue.value === "") {
+                i = false
+                errorName.innerText = '* Required'
+            }
+            if(inpDes.value === "") {
+                i = false
+                errorDesc.innerText = '* Required'
+            }
+            if(imageValue.files.length === 0) {
+                i = false
+                errorPic.innerText = '* Required'
+            }
+            if(inpLink.value === "") {
+                i = false
+                errorLink.innerText = '* Required'
+            }
+            if(listTag.length === 0) {
+                i=false
+                error.innerText = '* Required'
+            }
+            if(i) {
                 console.log(imageValue.files)
                 const urls = await uploadFiles(imageValue.files)
                 postAPI({
@@ -36,9 +61,7 @@ function AddProject() {
                     description: inpDes.value,
                     link: inpLink.value
                 })
-            } else {
-                error.innerText = '* Please Fill this'
-            }
+            }   
             
         })
 
@@ -111,17 +134,21 @@ console.log(listTag)
                     <p id="error" class="tw-text-white"></p>
                     ${Tags(handleClick)}
                 </div>
-                <label>Name Project</label>
-                <input class="inp_add" type="text" placeholder="Type Name here..." required/>
+                <label>Project Name</label>
+                <input class="inp_add" type="text" placeholder="Type Name here..."/>
+                <p id="errorName" class="tw-text-white"></p>
                 <br/>
-                <label>Picture Project</label>
+                <label>Picture</label>
                 </br>
-                <input class="inp_add_file" type="file" multiple placeholder="Choose Images" required/>
+                <input class="inp_add_file" type="file" multiple placeholder="Choose Images"/>
+                <p id="errorPic" class="tw-text-white"></p>
                 </br>
                 <label>Description</label>
-                <textarea required class="inp_des tw-w-full tw-bg-transparent tw-border-1 tw-border-white tw-p-3" rows="8" placeholder="Enter description"></textarea>
+                <textarea class="inp_des tw-w-full tw-bg-transparent tw-border-1 tw-border-white tw-p-3" rows="8" placeholder="Enter description"></textarea>
+                <p id="errorDesc" class="tw-text-white"></p>
                 <label>Link Web</label>
-                <input required class="inp_link" type="url" placeholder="Type Link here..."/>
+                <input class="inp_link" type="url" placeholder="Type Link here..."/>
+                <p id="errorLink" class="tw-text-white"></p>
                 <button class="btn_add">Add Project</button>
             </form>
         </div>

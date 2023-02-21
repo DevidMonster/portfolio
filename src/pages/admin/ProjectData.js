@@ -77,7 +77,7 @@ function ProjectData() {
                         <tr>
                             <td>#id</td>
                             <td>Name</td>
-                            <td>Images</td>
+                            <td>Image</td>
                             <td>Description</td>
                             <td>Framework/Tech</td>
                             <td>Link</td>

@@ -24,7 +24,6 @@ function Banner() {
                     Hi, I'm 
                     </br>
                     <span id="text" class="md:tw-text-6xl tw-text-4xl tw-h-16 md:tw-h-24 tw-pt-2">
-                        
                     </span>
                 </h1>
                 <h2 class="md:tw-text-3xl tw-text-2xl tw-my-4">

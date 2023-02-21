@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading"
 import Tags from "@/components/Tags"
 
 import { router, useEffect, useState } from "@/lib"
@@ -39,11 +40,30 @@ function EditProject({ id }) {
         const inpLink = document.querySelector(".inp_link")
         const imageValue = document.querySelector(".inp_add_file")
         const error = document.querySelector("#error")
+        const errorName = document.querySelector("#errorName")
+        const errorDesc = document.querySelector("#errorDesc")
+        const errorLink = document.querySelector("#errorLink")
 
         form.addEventListener('submit',async (e) => {
             e.preventDefault()
-            if(listTag.length > 0) {
-
+            let i = true
+            if(inpValue.value === "") {
+                i = false
+                errorName.innerText = '* Required'
+            }
+            if(inpDes.value === "") {
+                i = false
+                errorDesc.innerText = '* Required'
+            }
+            if(inpLink.value === "") {
+                i = false
+                errorLink.innerText = '* Required'
+            }
+            if(listTag.length === 0) {
+                i=false
+                error.innerText = '* Required'
+            }
+            if(i) {      
                 console.log(imageValue.files)
                 let files = imageValue.files
                 if(imageValue.files.length === 0) {
@@ -57,8 +77,6 @@ function EditProject({ id }) {
                     description: inpDes.value,
                     link: inpLink.value
                 })   
-            } else {
-                error.innerText = '* Please Fill this'
             }
             
         })
@@ -116,35 +134,44 @@ function EditProject({ id }) {
 
     return /*html*/`
         <div class="tw-min-h-screen tw-w-4/5 tw-mx-auto tw-text-white">
-            <h1>Edit</h1>
-            <form class="form_submit">
-                <div class="tw-py-3">
-                    <h2>Edit framework/tech</h2>
-                    <div class="box">
-                        ${listTag.map(item => `
-                            <li class="Tag">
-                                <span>${item}</span>
-                                <a class="btn-delete tw-cursor-pointer" data-id="${item}">X</a>
-                            </li>
-                        `).join('')}
+            <h1>Edit Project</h1>
+            ${Object.keys(item).length > 0 ? (
+                `<form class="form_submit">
+                    <div class="tw-py-3">
+                        <h2>Edit framework/tech</h2>
+                        <div class="box">
+                            ${listTag.map(item => `
+                                <li class="Tag">
+                                    <span>${item}</span>
+                                    <a class="btn-delete tw-cursor-pointer" data-id="${item}">X</a>
+                                </li>
+                            `).join('')}
+                        </div>
+                        <p id="error" class="tw-text-white"></p>
+                        ${Tags(handleClick)}
                     </div>
-                    <p id="error" class="tw-text-white"></p>
-                    ${Tags(handleClick)}
-                </div>
-                <label>Name Project</label>
-                <input class="inp_name" value="${item.name}" type="text" placeholder="Type Name here..." required/>
-                <br/>
-                <label>Picture Project</label>
-                </br>
-                <input class="inp_add_file" type="file" multiple placeholder="Choose Images"/>
-                </br>
-                <label>Current Images</label>
-                <img class="tw-w-52 md:tw-w-1/4 tw-my-4" src="${Object.keys(item).length > 0 && item.images[0]}" alt="${item.name}"/>
-                <textarea required class="inp_des tw-w-full tw-bg-transparent tw-border-1 tw-border-white tw-p-3" rows="8" placeholder="Enter description">${item.description}</textarea>
-                <label>Link Web</label>
-                <input required class="inp_link" value="${item.link}" type="url" placeholder="Type Link here..."/>
-                <button class="btn_add">Edit Project</button>
-            </form>
+                    <label>Project Name</label>
+                    <input class="inp_name" value="${item.name}" type="text" placeholder="Type Name here..."/>
+                    <p id="errorName" class="tw-text-white"></p>
+                    <br/>
+                    <label>Picture</label>
+                    </br>
+                    <input class="inp_add_file" type="file" multiple placeholder="Choose Images"/>
+                    </br>
+                    <label>Current Images</label>
+                    <img class="tw-w-52 md:tw-w-1/4 tw-my-4" src="${Object.keys(item).length > 0 && item.images[0]}" alt="${item.name}"/>
+                    <textarea class="inp_des tw-w-full tw-bg-transparent tw-border-1 tw-border-white tw-p-3" rows="8" placeholder="Enter description">${item.description}</textarea>
+                    <p id="errorDesc" class="tw-text-white"></p>
+                    <label>Link Web</label>
+                    <input class="inp_link" value="${item.link}" type="url" placeholder="Type Link here..."/>
+                    <p id="errorLink" class="tw-text-white"></p>
+                    <button class="btn_add">Edit Project</button>
+                </form>`
+            ) : (
+                `<div class="tw-py-28">
+                    ${Loading()}
+                </div>`
+            )}
         </div>
     `
 }

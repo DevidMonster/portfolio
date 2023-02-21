@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const instance = axios.create({
-    baseURL: "https://erjevl-3000.preview.csb.app",
+    baseURL: "http://localhost:3000",
 })
 
 // instance.defaults.headers.common["Content-type"] = 'application/json'

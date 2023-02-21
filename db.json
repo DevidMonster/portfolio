@@ -1,9 +1,9 @@
 {
   "projects": [
     {
-      "name": "XOSS || Fashion",
+      "name": "XOSS || Fashions",
       "images": [
-        "https://res.cloudinary.com/dpwto5xyv/image/upload/v1676702605/learnECMAS/e97yt1tnfgh35cpffrzx.jpg"
+        "https://res.cloudinary.com/dpwto5xyv/image/upload/v1676952207/learnECMAS/j9xtndhtzjzysji0sckq.jpg"
       ],
       "techs": [
         "PHP",
@@ -29,5 +29,75 @@
       "link": "https://quangdang.ml/",
       "id": 2
     }
-  ]
+  ],
+  "profiles": {
+    "about": {
+      "id": 1,
+      "content": "<p>My name is Dang. I am a web designer and developer, I am currently studying at FPT Polytechnic College as a 4th term student. Besides studying at school, I also take extra classes outside or online like F8.fullstack, Udemy, ...</p></br><p>My goal is to become a Frontend developer. I have a passion for coding and am not afraid of difficulties and am always ready to receive new knowledge.</p>"
+    },
+    "infos": [
+      {
+        "id": 1,
+        "name": "Full Name",
+        "content": "Nguyễn Quang Đăng"
+      },
+      {
+        "id": 2,
+        "name": "Birth Day",
+        "content": "31/8/2003"
+      },
+      {
+        "id": 3,
+        "name": "Address",
+        "content": "46 Hàng Bồ, Hoàn Kiếm, Hà Nội"
+      },
+      {
+        "id": 4,
+        "name": "Phone",
+        "content": "<a href='tel:0396265650' target='_blank'>0396265650</a>"
+      },
+      {
+        "id": 5,
+        "name": "Education",
+        "content": "FPT Polytechnic"
+      },
+      {
+        "id": 6,
+        "name": "Email",
+        "content": "<a href='mailto: mrbat905@gmail.com' target='_blank'>mrbat905@gmail.com</a>"
+      },
+      {
+        "id": 7,
+        "name": "GitHub",
+        "content": "<a href='https://github.com/DevidMonster' target='_blank'>https://github.com/DevidMonster</a>"
+      }
+    ],
+    "skills": [
+      {
+        "id": 1,
+        "name": "Html, Css",
+        "level": "Good"
+      },
+      {
+        "id": 2,
+        "name": "JavaScript",
+        "level": "Medium"
+      },
+      {
+        "id": 3,
+        "name": "ReactJs",
+        "level": "Medium"
+      },
+      {
+        "id": 4,
+        "name": "PHP, MySql",
+        "level": "Medium"
+      },
+      {
+        "id": 5,
+        "name": "NodeJs, Express",
+        "level": "Week"
+      }
+    ]
+  }
 }
